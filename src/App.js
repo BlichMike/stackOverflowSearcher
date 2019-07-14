@@ -12,19 +12,26 @@ class App extends Component {
         this.allResults = null;
         this.state = {
             searchData: { input: "", results: null },
-            isSearching: false
+            isSearching: false,
+            searchError: false
         };
     }
 
     handleSearch = input => {
         this.setState({ isSearching: true });
 
-        resultsHelper.getData(input).then(result => {
-            let searchData = this.state.searchData;
-            searchData.results = result.items;
-            this.allResults = result.items;
-            this.setState({ isSearching: false, searchData });
-        });
+        resultsHelper
+            .getData(input)
+            .then(result => {
+                let searchData = this.state.searchData;
+                searchData.results = result.items;
+                this.allResults = result.items;
+                this.setState({ isSearching: false, searchData });
+            })
+            .catch(error => {
+                this.setState({ isSearching: false, searchError: true });
+                console.log(error);
+            });
     };
 
     handleFilterResults = q => {
@@ -37,7 +44,7 @@ class App extends Component {
 
     handleSortResults = sortby => {
         let searchData = this.state.searchData;
-        searchData.results = resultsHelper.sortBysortKey(
+        searchData.results = resultsHelper.sortBySortKey(
             searchData.results,
             sortby
         );
@@ -68,6 +75,7 @@ class App extends Component {
                     <Results
                         searchData={this.state.searchData}
                         isSearching={this.state.isSearching}
+                        searchError={this.state.searchError}
                     />
                 </div>
             </div>

@@ -14,8 +14,11 @@ export default class SearchBox extends Component {
 
     render() {
         return (
-            <div>
-                What would you like to know?
+            <div className="">
+                <div className="search-bar-txt">
+                    What would you like to know?
+                </div>
+
                 <input
                     className="search-bar"
                     placeholder="Search..."

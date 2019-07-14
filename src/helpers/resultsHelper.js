@@ -50,7 +50,10 @@ var resultsHelper = (function resHelper() {
     function getData(searchInput) {
         searchParams.intitle = searchInput;
         return fetch(buildQuery(searchApi, searchParams)).then(data => {
-            return data.json();
+            if (data.ok) {
+                return data.json();
+            }
+            throw Error(`Request rejected with status ${data.status}`);
         });
     }
 })();

@@ -48,25 +48,37 @@ export default class ResultItem extends Component {
 
         function formatDate(date) {
             var monthNames = [
-                "January",
-                "February",
-                "March",
-                "April",
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
                 "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December"
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
             ];
 
             var day = date.getDate();
             var monthIndex = date.getMonth();
             var year = date.getFullYear();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
 
-            return monthNames[monthIndex] + " " + day + ", " + year;
+            return (
+                monthNames[monthIndex] +
+                " " +
+                day +
+                ", " +
+                year +
+                " " +
+                hour +
+                ":" +
+                minute
+            );
         }
     }
 }
