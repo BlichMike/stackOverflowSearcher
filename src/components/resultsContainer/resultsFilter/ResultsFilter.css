@@ -1,0 +1,9 @@
+.filter-container {
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.filter-container input {
+    margin-right: 30px;
+}

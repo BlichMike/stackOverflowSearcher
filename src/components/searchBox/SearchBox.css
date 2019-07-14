@@ -1,0 +1,24 @@
+.search-bar {
+    width: 50%;
+    min-width: 200px;
+    padding: 5px;
+}
+
+.search-btn {
+    padding: 7px 12px;
+    color: #fff;
+    background-color: #337ab7;
+    border: 0;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+.search-btn:disabled {
+    cursor: not-allowed;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}

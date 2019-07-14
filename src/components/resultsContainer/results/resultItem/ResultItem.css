@@ -1,0 +1,42 @@
+.res-container {
+    border-bottom: 1px solid #eff0f1;
+    display: flex;
+    padding: 12px 8px;
+    width: 100%;
+}
+
+.res-left {
+    margin-right: 16px;
+    width: 58px;
+    margin-left: 8px;
+    flex-shrink: 0;
+    color: #6a737c;
+    font-size: 11px;
+}
+
+.res-left img {
+    max-width: 50px;
+}
+
+.res-right {
+    flex: 1 auto;
+    width: auto;
+    float: none;
+    margin: 0;
+    overflow: hidden;
+    text-align: left;
+}
+
+.owner-data {
+    color: #bab8c3;
+}
+
+.owner-data div {
+    display: inline-block;
+}
+
+.score-value {
+    display: block;
+    color: #6a737c;
+    font-size: 20px;
+}

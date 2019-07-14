@@ -1,0 +1,5 @@
+.results-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 74vh;
+}
